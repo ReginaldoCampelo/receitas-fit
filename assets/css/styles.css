@@ -85,7 +85,6 @@
     text-decoration: none;
 }
 
-/* Estilos da área principal (hero) */
 .bg-img {
     position: relative;
     min-height: 80vh;
@@ -131,7 +130,28 @@
     transform: translateY(-7px);
 }
 
-/* Estilos de responsividade */
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #279DA1;
+}
+
+.card-text {
+    color: #333;
+}
+
+.card-body ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.card-body li {
+    margin-bottom: 0.25rem;
+}
+
 @media (max-width: 768px) {
     .hero {
         padding: 15px;
