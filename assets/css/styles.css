@@ -1,3 +1,7 @@
+.inspect {
+    border: 1px dashed red !important;
+}
+
 .logo-image {
     width: 75px;
     height: 75px;
@@ -39,6 +43,35 @@
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.footer-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    /* Cor de fundo do rodapé */
+    color: white;
+    /* Cor do texto do rodapé */
+    text-align: center;
+    /* Alinha o texto ao centro */
+    padding: 10px 0;
+    /* Espaçamento interno para dar altura ao rodapé */
+    z-index: 1000;
+    /* Assegura que o rodapé fique acima de outros elementos */
+}
+
+.redirect-link {
+    color: #279DA1;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.redirect-link:hover,
+.redirect-link:focus {
+    color: #279DA1;
+    text-decoration: none;
 }
 
 @media (max-width: 991px) {
