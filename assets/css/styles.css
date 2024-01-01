@@ -1,5 +1,25 @@
+/* Reset e estilos básicos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos de depuração */
 .inspect {
     border: 1px dashed red !important;
+}
+
+/* Estilos de tipografia */
+.display-4 {
+    font-weight: 700;
+    color: #279DA1;
+}
+
+/* Estilos de navegação */
+.navbar {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo-image {
@@ -11,30 +31,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-.navbar {
-    background-color: #f8f9fa;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .navbar-nav {
     margin-left: auto;
-}
-
-.nav-link {
-    color: #555;
-    margin: 0 10px;
-    transition: color 0.3s ease-in-out;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-    color: #279DA1;
-    text-decoration: none;
-}
-
-.nav-link.active {
-    color: #279DA1;
-    border-bottom: 2px solid #279DA1;
 }
 
 .navbar-toggler {
@@ -45,21 +43,34 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+.nav-link {
+    color: #555;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+    color: #279DA1;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid #279DA1;
+}
+
+/* Estilos do rodapé */
 .footer-container {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: #333;
-    /* Cor de fundo do rodapé */
     color: white;
-    /* Cor do texto do rodapé */
     text-align: center;
-    /* Alinha o texto ao centro */
     padding: 10px 0;
-    /* Espaçamento interno para dar altura ao rodapé */
     z-index: 1000;
-    /* Assegura que o rodapé fique acima de outros elementos */
 }
 
 .redirect-link {
@@ -74,8 +85,44 @@
     text-decoration: none;
 }
 
-@media (max-width: 991px) {
-    .navbar-nav {
-        margin-left: 0;
+/* Estilos da área principal (hero) */
+.bg-img {
+    position: relative;
+    min-height: 80vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../images/logo.webp') no-repeat center center;
+    background-size: 100%, cover !important;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+    opacity: 0.8;
+}
+
+/* Estilos dos botões */
+.btn-success {
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #ba0e09;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 8px 15px rgba(129, 199, 132, 0.5);
+    transition: all 0.3s ease 0s;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #000;
+    box-shadow: 0px 15px 20px rgba(129, 199, 132, 0.4);
+    transform: translateY(-7px);
+}
+
+/* Estilos de responsividade */
+@media (max-width: 768px) {
+    .hero {
+        padding: 15px;
+        min-height: 100vh;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
     }
 }
