@@ -4,5 +4,45 @@
     border-radius: 30%;
     overflow: hidden;
     border: 2px solid #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.navbar {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-link {
+    color: #555;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #279DA1;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    color: #279DA1;
+    border-bottom: 2px solid #279DA1;
+}
+
+.navbar-toggler {
+    border-color: #ddd;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        margin-left: 0;
+    }
 }
