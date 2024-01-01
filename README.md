@@ -21,7 +21,7 @@ O principal objetivo deste projeto é desenvolver habilidades em:
 - **Bootstrap**: Framework CSS para desenvolvimento de componentes responsivos e estilizados.
 
 ## 🔍 Visualização do Projeto
-Para visualizar o site, você pode acessar [-] ou clonar o repositório e abrir o arquivo `index.html` em um navegador.
+Para visualizar o site, você pode acessar [https://receitas-fit-estacio.netlify.app/] ou clonar o repositório e abrir o arquivo `index.html` em um navegador.
 
 ## 📚 Aprendizado e Desenvolvimento
 Este projeto é uma etapa essencial no meu percurso acadêmico em Fullstack, demonstrando a aplicação prática dos conhecimentos adquiridos em HTML e CSS.
