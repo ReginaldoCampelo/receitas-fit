@@ -55,6 +55,169 @@
     <!-- Navbar end -->
 
     <!-- Main Content start -->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="bg-light p-5 rounded-3 shadow">
+            <h2 class="text-center mb-4">Efetue seu Cadastro</h2>
+            <form>
+              <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nome"
+                  placeholder="Digite seu nome completo"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Digite seu e-mail"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="cep" class="form-label">CEP</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cep"
+                  placeholder="Digite seu CEP"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="rua" class="form-label">Rua</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="rua"
+                  placeholder="Digite o nome da sua rua"
+                  required
+                />
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col">
+                  <label for="numero" class="form-label">N°</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="numero"
+                    placeholder="N°"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="complemento" class="form-label"
+                    >Complemento</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="complemento"
+                    placeholder="Complemento"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="row g-3 mb-4">
+                <div class="col">
+                  <label for="cidade" class="form-label">Cidade</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cidade"
+                    placeholder="Sua cidade"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="uf" class="form-label">UF</label>
+                  <select
+                    class="form-select"
+                    id="uf"
+                    aria-label="Seleção de Estado"
+                    required
+                  >
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="BA">Bahia</option>
+                    <option selected value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="cadastroModal"
+        tabindex="-1"
+        aria-labelledby="cadastroModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cadastroModalLabel">
+                Confirmação de Cadastro
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- O conteúdo do modal será preenchido pelo JavaScript -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Main Content end -->
 
     <!--Footer start -->
@@ -70,6 +233,65 @@
       </div>
     </div>
     <!--Footer end -->
+
+    <!-- Toast Container -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+      <div
+        id="liveToast"
+        class="toast hide"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="5000"
+      >
+        <div class="toast-header">
+          <strong class="me-auto">Notificação</strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">Usuário cadastrado com sucesso!</div>
+      </div>
+    </div>
+
+    <!-- Script para mostrar o Toast -->
+    <script>
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var toast = new bootstrap.Toast(document.getElementById("liveToast"));
+        toast.show();
+      });
+    </script>
+
+    <!-- Script para mostrar o Modal -->
+    <script>
+      function getFormData(form) {
+        const inputs = form.querySelectorAll("input, select");
+        let data = {};
+        inputs.forEach((input) => {
+          data[input.id] = input.value;
+        });
+        return data;
+      }
+
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const data = getFormData(this);
+
+        const modalBody = document.querySelector("#cadastroModal .modal-body");
+        modalBody.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+
+        const cadastroModal = new bootstrap.Modal(
+          document.getElementById("cadastroModal")
+        );
+        cadastroModal.show();
+      });
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="assets/bootstrap-5.3.2/js/bootstrap.min.js"></script>
